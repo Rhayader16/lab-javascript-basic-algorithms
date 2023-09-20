@@ -22,3 +22,17 @@ if (hacker1.length > hacker2.length) {
 }
 
 // Iteration 3: Loops
+let hackerCapital = "";
+
+for (let i = 0; i < hacker1.length; i++) {
+  hackerCapital += hacker1[i].toUpperCase() + " ";
+}
+console.log(hackerCapital);
+
+let appoggio = "";
+
+for (let i = hacker2.length - 1; i >= 0; i--) {
+  let hackerReverse = hacker2[i];
+  appoggio += hackerReverse;
+}
+console.log(appoggio);
