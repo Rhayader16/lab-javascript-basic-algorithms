@@ -59,5 +59,41 @@ for (let i = 0; i < longText.length; i++) {
     etCount++;
   }
 }
-console.log("This paragraph contains" + longText.length + "words.");
+console.log("This paragraph contains" + " " + longText.length + " " + "words.");
 console.log(`There are ${etCount} "et" inside this paragraph`);
+
+// Extra 2
+
+let phraseToCheck = "";
+let palindrome = "";
+let cptLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lowerCaseLetter = "abcdefghijklmnopqrstuvwxyz";
+let anotherPhrase = "A man, a plan, a canal, Panama!";
+
+//Creation of a string without any symbols or spaces
+
+for (let i = 0; i < anotherPhrase.length; i++) {
+  for (let j = 0; j < cptLetter.length; j++) {
+    if (
+      anotherPhrase[i] === cptLetter[j] ||
+      anotherPhrase[i] === lowerCaseLetter[j]
+    ) {
+      phraseToCheck += anotherPhrase[i];
+    }
+  }
+}
+//console.log(phraseToCheck, anotherPhrase); middle check
+
+//Reverse string
+
+for (let i = phraseToCheck.length - 1; i >= 0; i--) {
+  let phraseReverse = phraseToCheck[i];
+  palindrome += phraseReverse;
+}
+
+//Comparison of the initial string and the reversed string
+
+if (phraseToCheck.toLowerCase() === palindrome.toLowerCase()) {
+  console.log(`The phrase "${anotherPhrase}" is indeed a palindrome!`);
+} else console.log(`This phrase is not a palindrome, sorry :(`);
+//console.log(palindrome, phraseToCheck); final check
