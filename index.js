@@ -64,7 +64,7 @@ console.log(`There are ${etCount} "et" inside this paragraph`);
 
 // Extra 2
 
-let phraseToCheck = "";
+/*let phraseToCheck = "";
 let palindrome = "";
 let cptLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowerCaseLetter = "abcdefghijklmnopqrstuvwxyz";
@@ -95,5 +95,39 @@ for (let i = phraseToCheck.length - 1; i >= 0; i--) {
 
 if (phraseToCheck.toLowerCase() === palindrome.toLowerCase()) {
   console.log(`The phrase "${anotherPhrase}" is indeed a palindrome!`);
-} else console.log(`This phrase is not a palindrome, sorry :(`);
+} else console.log(`This phrase is not a palindrome, sorry :(`);*/
 //console.log(palindrome, phraseToCheck); final check
+
+// Palidromes the proper way
+
+const justAStringWithEt = "et rometo et papapaet et";
+//const cleanupRegex = /\w+/gi
+const cleanupRegexp = new RegExp(/\bet\b/, "gi");
+
+//palindrome.match(cleanupRegexp)
+
+console.log(justAStringWithEt.match(cleanupRegexp));
+
+const palindrome = "Am?o !r, Ro...4m,a";
+
+cleanedUpPalindrome = "";
+for (let i = 0; i < palindrome.length; i++) {
+  if (palindrome[i].toUpperCase() !== palindrome.toLowerCase()) {
+    cleanedUpPalindrome += palindrome[i].toUpperCase();
+  }
+}
+let reversedPalindrome = "";
+/*for (let i = cleanedUpPalindrome.length -1; i >= 0; i--) {
+  reversedPalindrome += cleanedUpPalindrome[i]
+}
+
+if (reversedPalindrome === cleanedUpPalindrome) {
+  console.log("it's a palindrome indeed")
+}
+*/
+
+let sentence = "well, hello, how are you?";
+let cleanedUpPalindromeAsArray = cleanedUpPalindrome.split(",");
+console.log(cleanedUpPalindromeAsArray);
+cleanedUpPalindromeAsArray.reverse();
+console.log(cleanedUpPalindromeAsArray);
